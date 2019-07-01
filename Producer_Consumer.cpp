@@ -37,8 +37,7 @@ class consumer : public sc_module {
         }
       }
 };
-
-        class top : public sc_module {
+class top : public sc_module {
           public:
           	producer prod_inst;
             consumer cons_inst;
@@ -48,11 +47,11 @@ class consumer : public sc_module {
             prod_inst.out(fifo_inst);
             cons_inst.in(fifo_inst);
           }
-        };
-          int sc_main(int argc, char** argv) {
+};
+int sc_main(int argc, char** argv) {
             top t1("TopModule");
             sc_start();
             return 0;
-          }
+}
 
       	
